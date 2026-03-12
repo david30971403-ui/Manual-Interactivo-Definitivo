@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AssetImage from '../components/AssetImage.tsx';
+import AssetImage from '../components/AssetImage';
 
 const Home: React.FC = () => {
   return (
@@ -35,23 +35,17 @@ const Home: React.FC = () => {
       {/* Video Support Section */}
       <section className="space-y-8">
         <div className="flex items-center gap-4">
-          <h3 className="text-3xl font-black uppercase text-slate-900 tracking-tight">Soporte Multimedia</h3>
+          <h3 className="text-3xl font-black uppercase text-slate-900 tracking-tight">Instituciones</h3>
           <div className="flex-grow h-[1px] bg-slate-200"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative group cursor-pointer overflow-hidden rounded-3xl bg-slate-900 border-4 border-slate-200 shadow-xl h-80">
-             {/* Espacio Video 1 */}
-             <AssetImage className="w-full h-full object-cover opacity-50 hover:opacity-100 transition-all" alt="VIDEO INSTITUCIONAL" />
-             <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center pointer-events-none">
-                <h4 className="text-xl font-bold uppercase tracking-widest drop-shadow-md">Resumen del Proyecto</h4>
-             </div>
+             {/* Espacio Institucion 1 */}
+             <AssetImage className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all" alt="INSTITUCION 1" />
           </div>
           <div className="relative group cursor-pointer overflow-hidden rounded-3xl bg-slate-900 border-4 border-slate-200 shadow-xl h-80">
-             {/* Espacio Video 2 */}
-             <AssetImage className="w-full h-full object-cover opacity-50 hover:opacity-100 transition-all" alt="VIDEO DESENSAMBLE" />
-             <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center pointer-events-none">
-                <h4 className="text-xl font-bold uppercase tracking-widest drop-shadow-md">Técnicas de Desensamble</h4>
-             </div>
+             {/* Espacio Institucion 2 */}
+             <AssetImage className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all" alt="INSTITUCION 2" />
           </div>
         </div>
       </section>
@@ -59,18 +53,18 @@ const Home: React.FC = () => {
       {/* Grid of Procedures */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { t: 'Limpieza Profunda', d: 'Protocolos de remoción de óxido y polvo mediante solventes dieléctricos.', icon: '🛠️' },
-          { t: 'Herramientas Necesarias', d: 'Catálogo completo de instrumentación para el mantenimiento preventivo y correctivo.', icon: '🧰' },
-          { t: 'Términos Utilizados', d: 'Diccionario técnico de conceptos fundamentales sobre hardware y software Canaima.', icon: '📖' }
+          { t: 'Limpieza Profunda', d: 'Protocolos de remoción de óxido y polvo mediante solventes dieléctricos.', icon: '🛠️', link: '/introduccion' },
+          { t: 'Herramientas Necesarias', d: 'Catálogo completo de instrumentación para el mantenimiento preventivo y correctivo.', icon: '🧰', link: '/herramientas' },
+          { t: 'Términos Utilizados', d: 'Diccionario técnico de conceptos fundamentales sobre hardware y software Canaima.', icon: '📖', link: '/glosario' }
         ].map((item, i) => (
-          <div key={i} className="bg-white p-6 space-y-4 rounded-2xl border border-slate-200 hover:border-blue-200 transition-all group shadow-sm flex flex-col">
+          <Link to={item.link} key={i} className="bg-white p-6 space-y-4 rounded-2xl border border-slate-200 hover:border-blue-600 transition-all group shadow-sm flex flex-col cursor-pointer hover:shadow-xl hover:-translate-y-1">
             <div className="rounded-xl overflow-hidden mb-4 h-40">
               <AssetImage className="w-full h-full object-cover" alt={item.t} />
             </div>
             <div className="text-3xl">{item.icon}</div>
-            <h4 className="text-xl font-black uppercase tracking-tight text-slate-800">{item.t}</h4>
+            <h4 className="text-xl font-black uppercase tracking-tight text-slate-800 group-hover:text-blue-600 transition-colors">{item.t}</h4>
             <p className="text-sm font-medium text-slate-500 leading-relaxed">{item.d}</p>
-          </div>
+          </Link>
         ))}
       </section>
     </div>
