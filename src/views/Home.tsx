@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AssetImage from '../components/AssetImage';
+import heroCanaima from '../assets/hero_canaima.jpg';
+import videoInst from '../assets/video_inst.png';
+import videoDesensamble from '../assets/video_desensamble.png';
+import homeLimpieza from '../assets/home_limpieza.jpg';
+import homeTools from '../assets/home_tools.jpg';
+import homeGlossary from '../assets/home_glossary.jpg';
 
 const Home: React.FC = () => {
   return (
@@ -27,7 +32,7 @@ const Home: React.FC = () => {
           <div className="relative h-[400px] w-full">
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-50 rounded-full -z-10 animate-pulse"></div>
             {/* Espacio para imagen principal */}
-            <AssetImage className="w-full h-full rounded-2xl shadow-2xl border-4 border-white object-cover bg-white" alt="PORTADA PRINCIPAL" />
+            <img src={heroCanaima} className="w-full h-full rounded-2xl shadow-2xl border-4 border-white object-cover bg-white" alt="PORTADA PRINCIPAL" />
           </div>
         </div>
       </section>
@@ -39,13 +44,13 @@ const Home: React.FC = () => {
           <div className="flex-grow h-[1px] bg-slate-200"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="relative group cursor-pointer overflow-hidden rounded-3xl bg-slate-900 border-4 border-slate-200 shadow-xl h-80">
+          <div className="relative group overflow-hidden rounded-3xl bg-slate-900 border-4 border-slate-200 shadow-xl h-80 flex items-center justify-center p-4">
              {/* Espacio Institucion 1 */}
-             <AssetImage className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all" alt="INSTITUCION 1" />
+             <img src={videoInst} className="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-all" alt="INSTITUCION 1" />
           </div>
-          <div className="relative group cursor-pointer overflow-hidden rounded-3xl bg-slate-900 border-4 border-slate-200 shadow-xl h-80">
+          <div className="relative group overflow-hidden rounded-3xl bg-slate-900 border-4 border-slate-200 shadow-xl h-80 flex items-center justify-center p-4">
              {/* Espacio Institucion 2 */}
-             <AssetImage className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all" alt="INSTITUCION 2" />
+             <img src={videoDesensamble} className="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-all" alt="INSTITUCION 2" />
           </div>
         </div>
       </section>
@@ -53,13 +58,13 @@ const Home: React.FC = () => {
       {/* Grid of Procedures */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { t: 'Limpieza Profunda', d: 'Protocolos de remoción de óxido y polvo mediante solventes dieléctricos.', icon: '🛠️', link: '/introduccion' },
-          { t: 'Herramientas Necesarias', d: 'Catálogo completo de instrumentación para el mantenimiento preventivo y correctivo.', icon: '🧰', link: '/herramientas' },
-          { t: 'Términos Utilizados', d: 'Diccionario técnico de conceptos fundamentales sobre hardware y software Canaima.', icon: '📖', link: '/glosario' }
+          { t: 'Limpieza Profunda', d: 'Protocolos de remoción de óxido y polvo mediante solventes dieléctricos.', icon: '🛠️', link: '/introduccion', img: homeLimpieza },
+          { t: 'Herramientas Necesarias', d: 'Catálogo completo de instrumentación para el mantenimiento preventivo y correctivo.', icon: '🧰', link: '/herramientas', img: homeTools },
+          { t: 'Términos Utilizados', d: 'Diccionario técnico de conceptos fundamentales sobre hardware y software Canaima.', icon: '📖', link: '/glosario', img: homeGlossary }
         ].map((item, i) => (
           <Link to={item.link} key={i} className="bg-white p-6 space-y-4 rounded-2xl border border-slate-200 hover:border-blue-600 transition-all group shadow-sm flex flex-col cursor-pointer hover:shadow-xl hover:-translate-y-1">
-            <div className="rounded-xl overflow-hidden mb-4 h-40">
-              <AssetImage className="w-full h-full object-cover" alt={item.t} />
+            <div className="rounded-xl overflow-hidden mb-4 h-40 bg-slate-100">
+              <img src={item.img} className="w-full h-full object-cover" alt={item.t} />
             </div>
             <div className="text-3xl">{item.icon}</div>
             <h4 className="text-xl font-black uppercase tracking-tight text-slate-800 group-hover:text-blue-600 transition-colors">{item.t}</h4>
