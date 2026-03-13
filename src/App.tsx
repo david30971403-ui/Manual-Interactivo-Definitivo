@@ -7,7 +7,6 @@ import Components from './views/Components.tsx';
 import Tools from './views/Tools.tsx';
 import Glossary from './views/Glossary.tsx';
 import Credits from './views/Credits.tsx';
-import { dbHelpers } from './components/AssetImage.tsx';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,43 +21,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { path: '/glosario', label: 'GLOSARIO' },
     { path: '/creditos', label: 'CRÉDITOS' },
   ];
-
-  const handleExportImages = async () => {
-    if (!confirm("Esto descargará un archivo 'permanentImages.ts' con todas las imágenes que has colocado. ¿Deseas continuar?")) return;
-    
-    try {
-      const allImages = await dbHelpers.getAll();
-      const count = Object.keys(allImages).length;
-      
-      if (count === 0) {
-        alert("No has subido ninguna imagen todavía.");
-        return;
-      }
-
-      const fileContent = `// ARCHIVO GENERADO AUTOMÁTICAMENTE
-// Reemplaza el contenido de 'utils/permanentImages.ts' con este código
-// para que tus imágenes queden guardadas para siempre en la web.
-
-export const PERMANENT_IMAGES: Record<string, string> = ${JSON.stringify(allImages, null, 2)};
-`;
-
-      const blob = new Blob([fileContent], { type: 'text/typescript' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'permanentImages.ts';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      
-      alert(`¡Archivo generado con ${count} imágenes! Ahora reemplaza el archivo 'utils/permanentImages.ts' con el que acabas de descargar.`);
-
-    } catch (error) {
-      console.error(error);
-      alert("Hubo un error generando el archivo.");
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900 selection:bg-blue-600 selection:text-white">
@@ -127,9 +89,6 @@ export const PERMANENT_IMAGES: Record<string, string> = ${JSON.stringify(allImag
            <div className="md:text-center">
              <p className="mb-1 text-blue-600 font-black">Proyecto Académico</p>
              <p className="text-slate-600">UPT Aragua "Federico Brito Figueroa"</p>
-             <button onClick={handleExportImages} className="mt-4 text-[10px] bg-slate-100 hover:bg-blue-600 hover:text-white px-3 py-2 rounded transition-colors flex items-center gap-2 mx-auto">
-               ⚙️ DESCARGAR CÓDIGO DE IMÁGENES
-             </button>
            </div>
            <div className="md:text-right">
              <p className="mb-1 text-blue-600 font-black">Copyright</p>

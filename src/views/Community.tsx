@@ -1,6 +1,4 @@
 import React from 'react';
-import AssetImage from '../components/AssetImage.tsx';
-import AssetVideo from '../components/AssetVideo.tsx';
 
 const Community: React.FC = () => {
   return (
@@ -36,7 +34,7 @@ const Community: React.FC = () => {
             <h4 className="text-xs font-black uppercase tracking-[0.2em] text-blue-600">Video: El Legado de Semidey</h4>
             <div className="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-lg h-64">
                {/* Espacio Video Historia */}
-               <AssetImage className="absolute inset-0 w-full h-full object-cover" alt="VIDEO HISTORIA" />
+               <img src="https://picsum.photos/seed/historia/800/600" className="absolute inset-0 w-full h-full object-cover" alt="VIDEO HISTORIA" referrerPolicy="no-referrer" />
             </div>
           </div>
         </div>
@@ -45,17 +43,17 @@ const Community: React.FC = () => {
            <div className="grid grid-cols-2 gap-4 h-48">
               <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white group h-full">
                 {/* Espacio Cultura */}
-                <AssetImage className="w-full h-full object-cover" alt="FOTO CULTURA" />
+                <img src="https://picsum.photos/seed/cultura/400/300" className="w-full h-full object-cover" alt="FOTO CULTURA" referrerPolicy="no-referrer" />
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white group h-full">
                 {/* Espacio Educación */}
-                <AssetImage className="w-full h-full object-cover" alt="FOTO AULA" />
+                <img src="https://picsum.photos/seed/aula/400/300" className="w-full h-full object-cover" alt="FOTO AULA" referrerPolicy="no-referrer" />
               </div>
            </div>
 
            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white group h-80">
              {/* Espacio Sede */}
-             <AssetImage className="w-full h-full object-cover" alt="FOTO SEDE" />
+             <img src="https://picsum.photos/seed/sede/800/600" className="w-full h-full object-cover" alt="FOTO SEDE" referrerPolicy="no-referrer" />
            </div>
         </div>
       </section>
@@ -71,7 +69,7 @@ const Community: React.FC = () => {
            ].map((item, i) => (
              <div key={i} className="bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 hover:bg-white transition-all group overflow-hidden shadow-sm flex flex-col">
                 <div className="h-32 w-full">
-                   <AssetImage className="w-full h-full object-cover" alt={`VALOR ${item.v}`} />
+                   <img src={`https://picsum.photos/seed/valor${i}/400/300`} className="w-full h-full object-cover" alt={`VALOR ${item.v}`} referrerPolicy="no-referrer" />
                 </div>
                 <div className="p-6">
                   <h4 className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3 border-b border-blue-50 pb-2 group-hover:border-blue-200">{item.v}</h4>
@@ -96,7 +94,7 @@ const Community: React.FC = () => {
           {/* Video Evidence 1 */}
           <div className="space-y-4">
              <div className="aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-xl border-4 border-white relative group">
-                <AssetVideo className="w-full h-full object-cover" alt="EVIDENCIA VIDEO 1" />
+                <video src="" className="w-full h-full object-cover" title="EVIDENCIA VIDEO 1" controls />
              </div>
              <div className="text-center">
                 <h4 className="text-sm font-black uppercase tracking-widest text-slate-800">Video: Diagnóstico Inicial</h4>
@@ -107,7 +105,7 @@ const Community: React.FC = () => {
           {/* Video Evidence 2 */}
           <div className="space-y-4">
              <div className="aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-xl border-4 border-white relative group">
-                <AssetVideo className="w-full h-full object-cover" alt="EVIDENCIA VIDEO 2" />
+                <video src="" className="w-full h-full object-cover" title="EVIDENCIA VIDEO 2" controls />
              </div>
              <div className="text-center">
                 <h4 className="text-sm font-black uppercase tracking-widest text-slate-800">Video: Proceso de Limpieza</h4>
@@ -118,7 +116,7 @@ const Community: React.FC = () => {
           {/* Video Evidence 3 */}
           <div className="space-y-4">
              <div className="aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-xl border-4 border-white relative group">
-                <AssetVideo className="w-full h-full object-cover" alt="EVIDENCIA VIDEO 3" />
+                <video src="" className="w-full h-full object-cover" title="EVIDENCIA VIDEO 3" controls />
              </div>
              <div className="text-center">
                 <h4 className="text-sm font-black uppercase tracking-widest text-slate-800">Video: Pruebas Finales</h4>
@@ -130,23 +128,23 @@ const Community: React.FC = () => {
         {/* Photo Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
            <div className="col-span-2 row-span-2 rounded-3xl overflow-hidden shadow-lg border-4 border-white relative group">
-              <AssetImage className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="EVIDENCIA FOTO GRUPAL" />
+              <img src="https://picsum.photos/seed/evidencia_grupal/800/800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="EVIDENCIA FOTO GRUPAL" referrerPolicy="no-referrer" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                  <p className="text-white font-bold uppercase text-sm tracking-wider">Equipo de Trabajo</p>
               </div>
            </div>
            
            <div className="rounded-2xl overflow-hidden shadow-md border-2 border-white relative group">
-              <AssetImage className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="EVIDENCIA FOTO 1" />
+              <img src="https://picsum.photos/seed/evidencia1/400/400" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="EVIDENCIA FOTO 1" referrerPolicy="no-referrer" />
            </div>
            <div className="rounded-2xl overflow-hidden shadow-md border-2 border-white relative group">
-              <AssetImage className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="EVIDENCIA FOTO 2" />
+              <img src="https://picsum.photos/seed/evidencia2/400/400" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="EVIDENCIA FOTO 2" referrerPolicy="no-referrer" />
            </div>
            <div className="rounded-2xl overflow-hidden shadow-md border-2 border-white relative group">
-              <AssetImage className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="EVIDENCIA FOTO 3" />
+              <img src="https://picsum.photos/seed/evidencia3/400/400" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="EVIDENCIA FOTO 3" referrerPolicy="no-referrer" />
            </div>
            <div className="rounded-2xl overflow-hidden shadow-md border-2 border-white relative group">
-              <AssetImage className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="EVIDENCIA FOTO 4" />
+              <img src="https://picsum.photos/seed/evidencia4/400/400" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="EVIDENCIA FOTO 4" referrerPolicy="no-referrer" />
            </div>
         </div>
       </section>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AssetImage from '../components/AssetImage.tsx';
 
 const Tools: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
@@ -121,7 +120,7 @@ const Tools: React.FC = () => {
                     <div key={idx} className="flex flex-col group border border-slate-100 p-6 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-50/50 transition-all bg-white rounded-2xl relative overflow-hidden h-full">
                        <div className="overflow-hidden rounded-xl mb-6 shadow-sm bg-slate-100 h-48">
                           {/* Espacio Herramienta */}
-                          <AssetImage className="w-full h-full object-cover" alt={tool.n} />
+                          <img src={`https://picsum.photos/seed/tool${i}${idx}/400/300`} className="w-full h-full object-cover" alt={tool.n} referrerPolicy="no-referrer" />
                        </div>
                        <h4 className="text-xl font-black text-blue-600 uppercase tracking-tighter leading-tight mb-2 group-hover:scale-105 transition-transform origin-left">
                          {tool.n}

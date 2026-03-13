@@ -1,5 +1,4 @@
 import React from 'react';
-import AssetImage from '../components/AssetImage.tsx';
 
 const Credits: React.FC = () => {
   const team = [
@@ -70,7 +69,7 @@ const Credits: React.FC = () => {
             <div key={i} className="text-center space-y-8 p-12 bg-white border border-slate-100 rounded-3xl hover:border-blue-100 hover:shadow-2xl hover:shadow-blue-50/50 transition-all group relative overflow-hidden">
                <div className="relative inline-block w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl">
                  {/* Espacio Foto Integrante */}
-                 <AssetImage className="w-full h-full object-cover" alt={m.name} />
+                 <img src={`https://picsum.photos/seed/team${i}/400/400`} className="w-full h-full object-cover" alt={m.name} referrerPolicy="no-referrer" />
                </div>
                <div className="space-y-3">
                  <h4 className="text-3xl font-black uppercase tracking-tighter leading-none text-slate-900 group-hover:text-blue-600 transition-colors">

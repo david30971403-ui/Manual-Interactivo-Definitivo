@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AssetImage from '../components/AssetImage.tsx';
 import { FICHAS_TECNICAS, TechnicalSheetData } from '../data/fichasTecnicas.ts';
 import TechnicalSheetModal from '../components/TechnicalSheetModal.tsx';
 
@@ -91,7 +90,7 @@ const Components: React.FC = () => {
           {hardwareItems.map((item, i) => (
             <div key={i} className="flex flex-col md:flex-row gap-6 p-6 bg-white border-2 border-slate-100 rounded-3xl hover:border-blue-200 transition-all group shadow-sm">
                <div className="w-full md:w-32 h-32 flex-shrink-0 overflow-hidden rounded-2xl bg-slate-50">
-                  <AssetImage className="w-full h-full object-cover" alt={item.t} />
+                  <img src={`https://picsum.photos/seed/hw${i}/200/200`} className="w-full h-full object-cover" alt={item.t} referrerPolicy="no-referrer" />
                </div>
                <div className="space-y-2">
                   <div className="flex flex-col">
@@ -146,7 +145,7 @@ const Components: React.FC = () => {
            {softwareItems.map((item, i) => (
              <div key={i} className="bg-blue-600 p-6 rounded-3xl text-white group hover:bg-slate-900 transition-all shadow-xl shadow-blue-100 flex flex-col sm:flex-row gap-6 items-center sm:items-start relative overflow-hidden">
                 <div className="w-24 h-24 rounded-2xl bg-white/10 overflow-hidden flex-shrink-0 border-2 border-white/20">
-                   <AssetImage className="w-full h-full object-cover bg-white/20" alt={item.t} />
+                   <img src={`https://picsum.photos/seed/sw${i}/200/200`} className="w-full h-full object-cover bg-white/20" alt={item.t} referrerPolicy="no-referrer" />
                 </div>
                 <div className="space-y-4 relative z-10">
                     <div className="flex justify-between items-start">
@@ -197,7 +196,7 @@ const Components: React.FC = () => {
       {/* Technical Diagram Placeholder Visual */}
       <section className="relative h-96 bg-slate-900 rounded-[3rem] overflow-hidden flex items-center justify-center group shadow-2xl">
          {/* Espacio Fondo PCB */}
-         <AssetImage className="absolute inset-0 w-full h-full object-cover opacity-50" alt="FONDO PCB" />
+         <img src="https://picsum.photos/seed/pcb/1200/600" className="absolute inset-0 w-full h-full object-cover opacity-50" alt="FONDO PCB" referrerPolicy="no-referrer" />
          <div className="relative z-10 text-center space-y-6 px-6 pointer-events-none">
             <h3 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">Soberanía Tecnológica</h3>
             <p className="text-blue-400 font-bold uppercase tracking-widest text-sm max-w-xl mx-auto">

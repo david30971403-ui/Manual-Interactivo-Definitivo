@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AssetImage from '../components/AssetImage.tsx';
 
 const Introduction: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
@@ -87,7 +86,7 @@ const Introduction: React.FC = () => {
         </div>
         <div className="bg-slate-900 rounded-3xl p-4 shadow-2xl overflow-hidden group aspect-video relative">
            {/* Espacio Video Seguridad */}
-           <AssetImage className="absolute inset-0 w-full h-full object-cover" alt="VIDEO SEGURIDAD" />
+           <img src="https://picsum.photos/seed/vidseguridad/800/450" className="absolute inset-0 w-full h-full object-cover" alt="VIDEO SEGURIDAD" referrerPolicy="no-referrer" />
         </div>
       </section>
 
@@ -106,7 +105,7 @@ const Introduction: React.FC = () => {
            </div>
            <div className="rounded-2xl overflow-hidden border-2 border-slate-100 shadow-lg min-h-[200px]">
               {/* Espacio Foto Seguridad */}
-              <AssetImage className="w-full h-full object-cover" alt="FOTO SEGURIDAD" />
+              <img src="https://picsum.photos/seed/fotoseguridad/400/300" className="w-full h-full object-cover" alt="FOTO SEGURIDAD" referrerPolicy="no-referrer" />
            </div>
         </div>
       </section>
@@ -141,7 +140,7 @@ const Introduction: React.FC = () => {
                 </p>
                 <div className="rounded-xl overflow-hidden shadow-inner border border-slate-200 bg-slate-50 h-64">
                   {/* Espacio para la foto del paso */}
-                  <AssetImage className="w-full h-full object-contain bg-white" alt={`PASO ${i+1}`} />
+                  <img src={`https://picsum.photos/seed/paso${i+1}/600/400`} className="w-full h-full object-contain bg-white" alt={`PASO ${i+1}`} referrerPolicy="no-referrer" />
                 </div>
               </div>
             </div>
